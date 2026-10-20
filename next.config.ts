@@ -4,6 +4,28 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
+  async headers() {
+    return [
+      {
+        source: "/animation/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/section/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,

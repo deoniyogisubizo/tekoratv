@@ -74,7 +74,7 @@ export const media = {
     video:
       process.env.NEXT_PUBLIC_HERO_VIDEO_URL ||
       streamMp4(process.env.NEXT_PUBLIC_HERO_STREAM_UID ?? "") ||
-      "/animation/1014.mp4",
+      "/animation/1014.web.mp4",
     poster:
       process.env.NEXT_PUBLIC_HERO_POSTER_URL ||
       cfImage(process.env.NEXT_PUBLIC_HERO_IMAGE_ID ?? "", "hero"),

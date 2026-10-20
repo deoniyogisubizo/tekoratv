@@ -12,17 +12,26 @@ export function Hero() {
       />
 
       {media.hero.video ? (
-        <video
-          className="absolute inset-0 h-full w-full object-cover opacity-70 brightness-[0.45]"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={media.hero.poster || undefined}
-        >
-          <source src={media.hero.video} type="video/mp4" />
-        </video>
+        <>
+          <link
+            rel="preload"
+            as="video"
+            type="video/mp4"
+            href={media.hero.video}
+            fetchPriority="high"
+          />
+          <video
+            className="absolute inset-0 h-full w-full object-cover opacity-70 brightness-[0.45]"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={media.hero.poster || undefined}
+          >
+            <source src={media.hero.video} type="video/mp4" />
+          </video>
+        </>
       ) : media.hero.poster ? (
         <Image
           src={media.hero.poster}
