@@ -22,8 +22,8 @@ const WORDS = [
   {
     letter: "O",
     rest: "pportunity",
-    note: "Funding calls, grants, tenders, jobs, accelerators, and partnerships — openings tech people must act on before they close.",
-    placement: "lg:col-start-4 lg:row-start-2 lg:row-span-2",
+    note: "Funding calls, grants, tenders, jobs, accelerators, and partnerships.",
+    placement: "lg:col-start-4 lg:row-start-2",
   },
   {
     letter: "R",
@@ -35,7 +35,7 @@ const WORDS = [
     letter: "A",
     rest: "dvancement",
     note: "How a prototype becomes a product and a community gains a new capability.",
-    placement: "lg:col-start-1 lg:col-span-4 lg:row-start-4",
+    placement: "lg:col-start-4 lg:row-start-3",
   },
 ] as const;
 
