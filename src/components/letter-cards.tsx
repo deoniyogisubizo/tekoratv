@@ -4,38 +4,38 @@ const WORDS = [
   {
     letter: "T",
     rest: "echnology",
-    note: "The tools, systems, and engineering stories we put on air.",
-    wide: true,
-  },
-  {
-    letter: "E",
-    rest: "ntertainment",
-    note: "Culture, formats, and voices that make people want to watch.",
-    wide: false,
-  },
-  {
-    letter: "K",
-    rest: "nowledge",
-    note: "Practical education viewers can take and use the same day.",
-    wide: false,
+    note: "AI, embedded systems, IoT, networks, and digital infrastructure — the tools and engineering we cover from the inside, by people who actually build them.",
+    placement: "lg:col-start-1 lg:col-span-2 lg:row-start-1 lg:row-span-2",
   },
   {
     letter: "O",
     rest: "pportunity",
-    note: "Jobs, funding, partnerships, and programs worth knowing.",
-    wide: false,
+    note: "Funding calls, grants, tenders, jobs, accelerators, and partnerships — the openings tech people and companies must act on before they close.",
+    placement: "lg:col-start-3 lg:col-span-2 lg:row-start-1",
+  },
+  {
+    letter: "K",
+    rest: "nowledge",
+    note: "Tutorials, explainers, and hands-on training that turn a curious viewer into someone who can build.",
+    placement: "lg:col-start-3 lg:row-start-2",
   },
   {
     letter: "R",
     rest: "esearch",
-    note: "The ideas and experiments shaping what comes next.",
-    wide: false,
+    note: "Labs, universities, pilots, and experiments shaping what African tech does next.",
+    placement: "lg:col-start-4 lg:row-start-2 lg:row-span-2",
   },
   {
     letter: "A",
     rest: "dvancement",
-    note: "Progress for individuals, companies, and communities.",
-    wide: true,
+    note: "How a prototype becomes a product, a startup becomes a business, and a community gains a capability it did not have before.",
+    placement: "lg:col-start-1 lg:col-span-3 lg:row-start-3",
+  },
+  {
+    letter: "E",
+    rest: "ntertainment",
+    note: "Documentaries, creator features, and culture formats that make technology enjoyable to watch.",
+    placement: "lg:col-start-1 lg:col-span-4 lg:row-start-4",
   },
 ] as const;
 
@@ -52,13 +52,13 @@ export function LetterCards() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {WORDS.map(({ letter, rest, note, wide }, index) => (
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-fr">
+          {WORDS.map(({ letter, rest, note, placement }, index) => (
             <Reveal
               key={letter}
               y={16}
               delay={Math.min(index * 0.06, 0.3)}
-              className={wide ? "sm:col-span-2" : undefined}
+              className={placement}
             >
               <article className="relative flex h-full flex-col justify-between gap-10 overflow-hidden rounded-[10px] bg-paper px-6 py-7">
                 <span
@@ -73,7 +73,9 @@ export function LetterCards() {
                     {rest}
                   </span>
                 </p>
-                <p className="text-sm leading-relaxed text-graphite">{note}</p>
+                <p className="max-w-md text-sm leading-relaxed text-graphite">
+                  {note}
+                </p>
               </article>
             </Reveal>
           ))}
