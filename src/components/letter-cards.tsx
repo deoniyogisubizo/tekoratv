@@ -60,7 +60,7 @@ export function LetterCards() {
               delay={Math.min(index * 0.05, 0.25)}
               className={placement}
             >
-              <article className="relative flex h-full flex-col justify-between gap-5 overflow-hidden rounded-[10px] bg-paper px-5 py-5">
+              <article className="relative flex h-full flex-col overflow-hidden rounded-[10px] bg-paper px-5 py-5">
                 <span
                   aria-hidden
                   className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-l from-signal to-transparent"
@@ -73,7 +73,11 @@ export function LetterCards() {
                     {rest}
                   </span>
                 </p>
-                <p className="text-xs leading-relaxed text-graphite">{note}</p>
+                <div className="flex flex-1 items-center">
+                  <p className="text-sm leading-relaxed text-graphite">
+                    {note}
+                  </p>
+                </div>
               </article>
             </Reveal>
           ))}
