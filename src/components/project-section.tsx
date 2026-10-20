@@ -24,11 +24,21 @@ const TONE_BORDER: Record<Tone, string> = {
   signal: "border-ink/15",
 };
 
+const TONE_NUMBER: Record<Tone, string> = {
+  paper: "text-signal group-hover:text-ink",
+  smoke: "text-signal group-hover:text-ink",
+  ink: "text-signal group-hover:text-white",
+  signal: "text-white group-hover:text-ink",
+};
+
+function sentenceCase(value: string) {
+  return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+}
+
 interface ProjectSectionProps {
   id: string;
   index: string;
   eyebrow: string;
-  title: string;
   description?: string;
   tone?: Tone;
   children: ReactNode;
@@ -38,7 +48,6 @@ export function ProjectSection({
   id,
   index,
   eyebrow,
-  title,
   description,
   tone = "paper",
   children,
@@ -46,23 +55,28 @@ export function ProjectSection({
   return (
     <section
       id={id}
-      className={`scroll-mt-16 border-t ${TONE_BORDER[tone]} ${TONE_BG[tone]}`}
+      className={`group scroll-mt-16 border-t ${TONE_BORDER[tone]} ${TONE_BG[tone]}`}
     >
       <div className="mx-auto w-full max-w-[1600px] px-6 py-24 md:px-10 md:py-32">
-        <Reveal className="max-w-3xl">
-          <span
-            className={`flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] ${TONE_MUTED[tone]}`}
-          >
-            <span className="tabular-nums">{index}</span>
-            <span className="h-px w-8 bg-current opacity-40" aria-hidden />
-            {eyebrow}
-          </span>
-          <h2 className="mt-6 text-[clamp(2.2rem,5vw,4.5rem)] font-light leading-[0.98] tracking-[-0.04em]">
-            {title}
-          </h2>
+        <Reveal className="max-w-4xl">
+          <div className="flex items-center gap-5 md:gap-8">
+            <span
+              aria-hidden
+              className={`shrink-0 text-[clamp(3rem,8vw,6.5rem)] font-extrabold leading-[0.8] tracking-[-0.06em] tabular-nums transition-colors duration-300 ${TONE_NUMBER[tone]}`}
+            >
+              {index}
+            </span>
+            <span
+              aria-hidden
+              className={`h-px w-12 shrink-0 bg-current opacity-25 md:w-20`}
+            />
+            <h2 className="text-[clamp(1.4rem,2.8vw,2.4rem)] font-light leading-[1.05] tracking-[-0.02em]">
+              {sentenceCase(eyebrow)}
+            </h2>
+          </div>
           {description ? (
             <p
-              className={`mt-8 text-base font-medium leading-relaxed md:text-lg ${TONE_MUTED[tone]}`}
+              className={`mt-10 max-w-2xl text-base font-medium leading-relaxed md:text-lg ${TONE_MUTED[tone]}`}
             >
               {description}
             </p>

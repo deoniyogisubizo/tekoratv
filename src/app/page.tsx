@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+﻿import { Suspense } from "react";
 import { AccordionList } from "@/components/accordion-list";
 import { BulletGrid } from "@/components/bullet-grid";
 import { ContactCta } from "@/components/contact-cta";
@@ -25,7 +25,6 @@ export default function Home() {
         id="project"
         index="01"
         eyebrow="About the platform"
-        title="What is TEKORA TV?"
         description={project.what.intro}
         tone="paper"
       >
@@ -49,7 +48,6 @@ export default function Home() {
         id="problem"
         index="02"
         eyebrow="The gap"
-        title="The problem we see"
         description={project.problem.intro}
         tone="smoke"
       >
@@ -63,7 +61,6 @@ export default function Home() {
         id="solution"
         index="03"
         eyebrow="The journey"
-        title="Our solution"
         description={project.solution.intro}
         tone="ink"
       >
@@ -84,7 +81,6 @@ export default function Home() {
         id="programs"
         index="04"
         eyebrow="Programming"
-        title="What does TEKORA TV do?"
         tone="paper"
       >
         <TermList items={project.programs} columns={2} tone="paper" />
@@ -99,7 +95,6 @@ export default function Home() {
           id="audience"
           index="05"
           eyebrow="Audience"
-          title="Who TEKORA TV aims to work with"
           tone="paper"
         >
           <TermList items={project.audience} columns={2} tone="paper" />
@@ -109,7 +104,6 @@ export default function Home() {
           id="rtgroup"
           index="06"
           eyebrow="Foundation"
-          title="Why RTGroup?"
           description={project.rtgroup.intro}
           tone="smoke"
         >
@@ -135,7 +129,6 @@ export default function Home() {
           id="companies"
           index="07"
           eyebrow="Value for partners"
-          title="Why should companies work with TEKORA TV?"
           description={project.companies.intro}
           tone="smoke"
         >
@@ -151,7 +144,6 @@ export default function Home() {
         id="investors"
         index="08"
         eyebrow="Investment"
-        title="Opportunities for investors"
         description={project.investors.intro}
         tone="ink"
       >
@@ -165,7 +157,6 @@ export default function Home() {
         id="partners"
         index="09"
         eyebrow="Partnership"
-        title="TEKORA TV partnerships are:"
         tone="paper"
       >
         <PartnerMarquee />
@@ -175,7 +166,6 @@ export default function Home() {
         id="ecosystem"
         index="10"
         eyebrow="Ecosystem"
-        title={project.ecosystem.title}
         description={project.ecosystem.intro}
         tone="smoke"
       >

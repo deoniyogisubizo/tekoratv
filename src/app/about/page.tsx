@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { ContactCta } from "@/components/contact-cta";
 import { FlowSteps } from "@/components/flow-steps";
 import { PageIntro } from "@/components/page-intro";
 import { ProjectSection } from "@/components/project-section";
 import { project } from "@/lib/project";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -16,8 +15,8 @@ export default function AboutPage() {
   return (
     <>
       <PageIntro
-        eyebrow={`About ${site.parent}`}
-        title="Why RTGroup?"
+        eyebrow="Parent company"
+        title="About RTGroup"
         description={project.rtgroup.intro}
       />
 
@@ -25,7 +24,6 @@ export default function AboutPage() {
         id="foundation"
         index="01"
         eyebrow="Foundation"
-        title="What we already build."
         tone="paper"
       >
         <ul className="flex flex-wrap gap-3">
@@ -50,7 +48,6 @@ export default function AboutPage() {
         id="ecosystem"
         index="02"
         eyebrow="Ecosystem"
-        title={project.ecosystem.title}
         description={project.ecosystem.intro}
         tone="smoke"
       >
