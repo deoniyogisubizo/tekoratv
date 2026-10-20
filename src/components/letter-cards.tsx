@@ -65,7 +65,7 @@ export function LetterCards() {
                   aria-hidden
                   className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-l from-signal to-transparent"
                 />
-                <p className="text-ink">
+                <p className="flex items-baseline gap-2 text-ink">
                   <span className="text-[clamp(1.8rem,3vw,2.2rem)] font-extrabold leading-none tracking-[-0.03em]">
                     {letter}
                   </span>
